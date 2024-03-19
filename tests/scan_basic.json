@@ -1,0 +1,98 @@
+{
+  "registryId": "123456789123",
+  "repositoryName": "repo_name",
+  "imageId":
+    {
+      "imageDigest": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+      "imageTag": "latest"
+    },
+  "imageScanStatus":
+    {
+      "status": "COMPLETE",
+      "description": "The scan was completed successfully."
+    },
+  "imageScanFindings":
+    {
+      "imageScanCompletedAt": "2024-02-13T14:17:57.000Z",
+      "vulnerabilitySourceUpdatedAt": "2024-02-13T02:10:52.000Z",
+      "findingSeverityCounts": { "HIGH": 3, "MEDIUM": 2 },
+      "findings":
+        [
+          {
+            "name": "CVE-2023-52425",
+            "uri": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52425",
+            "severity": "HIGH",
+            "attributes":
+              [
+                { "key": "CVSS3_SCORE", "value": "7.5" },
+                { "key": "package_version", "value": "2.5.0-r1" },
+                { "key": "package_name", "value": "expat" },
+                {
+                  "key": "CVSS3_VECTOR",
+                  "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                }
+              ]
+          },
+          {
+            "name": "CVE-2023-44487",
+            "uri": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-44487",
+            "severity": "HIGH",
+            "attributes":
+              [
+                { "key": "CVSS3_SCORE", "value": "7.5" },
+                { "key": "package_version", "value": "1.55.1-r0" },
+                { "key": "package_name", "value": "nghttp2" },
+                {
+                  "key": "CVSS3_VECTOR",
+                  "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                }
+              ]
+          },
+          {
+            "name": "CVE-2023-7104",
+            "uri": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-7104",
+            "severity": "HIGH",
+            "attributes":
+              [
+                { "key": "CVSS3_SCORE", "value": "7.3" },
+                { "key": "package_version", "value": "3.41.2-r2" },
+                { "key": "package_name", "value": "sqlite" },
+                {
+                  "key": "CVSS3_VECTOR",
+                  "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+                }
+              ]
+          },
+          {
+            "name": "CVE-2023-52426",
+            "uri": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-52426",
+            "severity": "MEDIUM",
+            "attributes":
+              [
+                { "key": "CVSS3_SCORE", "value": "5.5" },
+                { "key": "package_version", "value": "2.5.0-r1" },
+                { "key": "package_name", "value": "expat" },
+                {
+                  "key": "CVSS3_VECTOR",
+                  "value": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+                }
+              ]
+          },
+          {
+            "name": "CVE-2023-22084",
+            "uri": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22084",
+            "severity": "MEDIUM",
+            "attributes":
+              [
+                { "key": "CVSS3_SCORE", "value": "4.9" },
+                { "key": "package_version", "value": "10.11.5-r0" },
+                { "key": "package_name", "value": "mariadb" },
+                {
+                  "key": "CVSS3_VECTOR",
+                  "value": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+                }
+              ]
+          }
+        ]
+    }
+}

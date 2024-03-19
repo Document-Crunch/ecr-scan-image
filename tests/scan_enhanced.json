@@ -1,0 +1,628 @@
+{
+    "registryId": "123456789123",
+    "repositoryName": "repo_name",
+    "imageId": {
+        "imageDigest": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+        "imageTag": "latest"
+    },
+    "imageScanStatus": {
+        "status": "ACTIVE",
+        "description": "Continuous scan is selected for image."
+    },
+    "imageScanFindings": {
+        "imageScanCompletedAt": "2024-02-12T20:25:09.451Z",
+        "vulnerabilitySourceUpdatedAt": "2024-02-12T20:25:09.451Z",
+        "findingSeverityCounts": {
+            "HIGH": 3,
+            "MEDIUM": 3,
+            "LOW": 1
+        },
+        "enhancedFindings": [
+            {
+                "awsAccountId": "123456789123",
+                "description": "AWS SDK for PHP is the Amazon Web Services software development kit for PHP. Within the scope of requests to S3 object keys and/or prefixes containing a Unix double-dot, a URI path traversal is possible. The issue exists in the `buildEndpoint` method in the RestSerializer component of the AWS SDK for PHP v3 prior to 3.288.1. The `buildEndpoint` method relies on the Guzzle Psr7 UriResolver utility, which strips dot segments from the request path in accordance with RFC 3986. Under certain conditions, this could lead to an arbitrary object being accessed. This issue has been patched in version 3.288.1.",
+                "findingArn": "arn:aws:inspector2:us-east-2:123456789123:finding/2018e08d7f965a4055aad497776dee1d",
+                "firstObservedAt": "2024-02-12T20:25:09.451Z",
+                "lastObservedAt": "2024-02-12T20:25:09.451Z",
+                "packageVulnerabilityDetails": {
+                    "cvss": [
+                        {
+                            "baseScore": 3.3,
+                            "scoringVector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+                            "source": "NVD",
+                            "version": "3.1"
+                        }
+                    ],
+                    "referenceUrls": [],
+                    "relatedVulnerabilities": [],
+                    "source": "NVD",
+                    "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-51651",
+                    "vendorCreatedAt": "2023-12-22T21:15:09.000Z",
+                    "vendorSeverity": "LOW",
+                    "vendorUpdatedAt": "2024-01-03T18:32:41.000Z",
+                    "vulnerabilityId": "CVE-2023-51651",
+                    "vulnerablePackages": [
+                        {
+                            "epoch": 0,
+                            "filePath": "app/composer.lock",
+                            "name": "aws/aws-sdk-php",
+                            "packageManager": "COMPOSER",
+                            "sourceLayerHash": "sha256:6dbc5f371e7521b80dba0880ec431a67a8def30d2d148f5c8a73cf35c87bd51e",
+                            "version": "3.263.13"
+                        }
+                    ]
+                },
+                "remediation": {
+                    "recommendation": {
+                        "text": "None Provided"
+                    }
+                },
+                "resources": [
+                    {
+                        "details": {
+                            "awsEcrContainerImage": {
+                                "architecture": "amd64",
+                                "imageHash": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                                "imageTags": [
+                                    "latest"
+                                ],
+                                "platform": "ALPINE_LINUX_3_18",
+                                "pushedAt": "2024-02-12T20:24:55.000Z",
+                                "registry": "123456789123",
+                                "repositoryName": "repo_name"
+                            }
+                        },
+                        "id": "arn:aws:ecr:us-east-2:123456789123:repository/repo_name/sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                        "tags": {},
+                        "type": "AWS_ECR_CONTAINER_IMAGE"
+                    }
+                ],
+                "score": 3.3,
+                "scoreDetails": {
+                    "cvss": {
+                        "adjustments": [],
+                        "score": 3.3,
+                        "scoreSource": "NVD",
+                        "scoringVector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+                        "version": "3.1"
+                    }
+                },
+                "severity": "LOW",
+                "status": "ACTIVE",
+                "title": "CVE-2023-51651 - aws/aws-sdk-php",
+                "type": "PACKAGE_VULNERABILITY",
+                "updatedAt": "2024-02-12T20:25:09.451Z"
+            },
+            {
+                "awsAccountId": "123456789123",
+                "description": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.",
+                "findingArn": "arn:aws:inspector2:us-east-2:123456789123:finding/2e46a45e64fa532e3159b08b052eb134",
+                "firstObservedAt": "2024-02-12T20:25:09.451Z",
+                "lastObservedAt": "2024-02-12T20:25:09.451Z",
+                "packageVulnerabilityDetails": {
+                    "cvss": [
+                        {
+                            "baseScore": 7.5,
+                            "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "source": "NVD",
+                            "version": "3.1"
+                        }
+                    ],
+                    "referenceUrls": [
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/CLB4TW7KALB3EEQWNWCN7OUIWWVWWCG2/",
+                        "https://bugzilla.redhat.com/show_bug.cgi?id=2242803",
+                        "https://msrc.microsoft.com/blog/2023/10/microsoft-response-to-distributed-denial-of-service-ddos-attacks-against-http/2/",
+                        "https://groups.google.com/g/golang-announce/c/iNNxDTCjZvo",
+                        "https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/",
+                        "https://www.debian.org/security/2023/dsa-5522",
+                        "https://www.debian.org/security/2023/dsa-5521",
+                        "https://www.cisa.gov/news-events/alerts/2023/10/10/http2-rapid-reset-vulnerability-cve-2023-44487",
+                        "https://lists.debian.org/debian-lts-announce/2023/11/msg00001.html",
+                        "https://aws.amazon.com/security/security-bulletins/AWS-2023-011/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LNMZJCDHGLJJLXO4OXWJMTVQRNWOC7UL/",
+                        "https://blog.qualys.com/vulnerabilities-threat-research/2023/10/10/cve-2023-44487-http-2-rapid-reset-attack",
+                        "https://netty.io/news/2023/10/10/4-1-100-Final.html",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VHUHTSXLXGXS7JYKBXTA3VINUPHTNGVU/",
+                        "https://security.gentoo.org/glsa/202311-09",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HT7T2R4MQKLIF4ODV4BDLPARWFPCJ5CZ/",
+                        "https://ubuntu.com/security/CVE-2023-44487",
+                        "https://tomcat.apache.org/security-10.html",
+                        "https://lists.debian.org/debian-lts-announce/2023/10/msg00023.html",
+                        "https://bugzilla.suse.com/show_bug.cgi?id=1216123",
+                        "https://lists.debian.org/debian-lts-announce/2023/10/msg00020.html",
+                        "https://www.debian.org/security/2023/dsa-5558",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WLPRQ5TWUQQXYWBJM7ECYDAIL2YVKIUH/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LKYHSZQFDNR7RSA7LHVLLIAQMVYCUGBG/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WE2I52RHNNU42PX6NZ2RBUHSFFJ2LVZX/",
+                        "https://lists.debian.org/debian-lts-announce/2023/10/msg00047.html",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2MBEPPC36UBVOZZNAXFHKLFGSLCMN5LI/",
+                        "https://lists.apache.org/thread/5py8h42mxfsn8l1wy6o41xwhsjlsd87q",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/KSEGD2IWKNUO3DWY4KQGUQM5BISRWHQE/",
+                        "https://openssf.org/blog/2023/10/10/http-2-rapid-reset-vulnerability-highlights-need-for-rapid-response/",
+                        "https://www.debian.org/security/2023/dsa-5540",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3N4NJ7FR4X4FPZUGNTQAPSTVB2HB2Y4A/",
+                        "https://cgit.freebsd.org/ports/commit/?id=c64c329c2c1752f46b73e3e6ce9f4329be6629f9",
+                        "https://access.redhat.com/security/cve/cve-2023-44487",
+                        "https://lists.debian.org/debian-lts-announce/2023/11/msg00012.html",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZKQSIKIAT5TJ3WSLU3RDBQ35YX4GY4V3/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/VSRDIV77HNKUSM7SJC5BKE5JSHLHU2NK/",
+                        "https://www.debian.org/security/2023/dsa-5549",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JIZSEFC3YKCGABA2BZW6ZJRMDZJMB7PJ/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZB43REMKRQR62NJEI7I5NQ4FSXNLBKRT/",
+                        "https://mailman.nginx.org/pipermail/nginx-devel/2023-October/S36Q5HBXR7CAIMPLLPRSSSYR4PCMWILK.html",
+                        "https://lists.debian.org/debian-lts-announce/2023/10/msg00045.html",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E72T67UPDRXHIDLO3OROR25YAMN4GGW5/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/XFOIBB4YFICHDM7IBOP7PWXW3FX4HLL2/",
+                        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-44487",
+                        "https://www.debian.org/security/2023/dsa-5570",
+                        "https://forums.swift.org/t/swift-nio-http2-security-update-cve-2023-44487-http-2-dos/67764",
+                        "https://cloud.google.com/blog/products/identity-security/google-cloud-mitigated-largest-ddos-attack-peaking-above-398-million-rps/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BFQD3KUEMFBHPAPBGLWQC34L4OWL5HAZ/",
+                        "https://martinthomson.github.io/h2-stream-limits/draft-thomson-httpbis-h2-stream-limits.html",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZLU6U2R2IC2K64NDPNMV55AUAO65MAF4/",
+                        "https://my.f5.com/manage/s/article/K000137106",
+                        "https://cloud.google.com/blog/products/identity-security/how-it-works-the-novel-http2-rapid-reset-ddos-attack",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X6QXN4ORIVF6XBW4WWFE7VNPVC74S45Y/",
+                        "https://blog.cloudflare.com/zero-day-rapid-reset-http2-record-breaking-ddos-attack/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FNA62Q767CFAFHBCDKYNPBMZWB7TWYVU/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JMEXY22BFG5Q64HQCM5CK2Q7KDKVV4TY/",
+                        "https://lists.w3.org/Archives/Public/ietf-http-wg/2023OctDec/0025.html",
+                        "https://lists.debian.org/debian-lts-announce/2023/10/msg00024.html"
+                    ],
+                    "relatedVulnerabilities": [],
+                    "source": "NVD",
+                    "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-44487",
+                    "vendorCreatedAt": "2023-10-10T14:15:10.000Z",
+                    "vendorSeverity": "HIGH",
+                    "vendorUpdatedAt": "2024-02-02T15:40:23.000Z",
+                    "vulnerabilityId": "CVE-2023-44487",
+                    "vulnerablePackages": [
+                        {
+                            "arch": "X86_64",
+                            "epoch": 0,
+                            "name": "nghttp2",
+                            "packageManager": "OS",
+                            "release": "r0",
+                            "sourceLayerHash": "sha256:404102781aa39e16bd9a361b243061e50f63d446d6145586a7a849a4129c8081",
+                            "version": "1.55.1"
+                        }
+                    ]
+                },
+                "remediation": {
+                    "recommendation": {
+                        "text": "None Provided"
+                    }
+                },
+                "resources": [
+                    {
+                        "details": {
+                            "awsEcrContainerImage": {
+                                "architecture": "amd64",
+                                "imageHash": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                                "imageTags": [
+                                    "latest"
+                                ],
+                                "platform": "ALPINE_LINUX_3_18",
+                                "pushedAt": "2024-02-12T20:24:55.000Z",
+                                "registry": "123456789123",
+                                "repositoryName": "repo_name"
+                            }
+                        },
+                        "id": "arn:aws:ecr:us-east-2:123456789123:repository/repo_name/sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                        "tags": {},
+                        "type": "AWS_ECR_CONTAINER_IMAGE"
+                    }
+                ],
+                "score": 7.5,
+                "scoreDetails": {
+                    "cvss": {
+                        "adjustments": [],
+                        "score": 7.5,
+                        "scoreSource": "NVD",
+                        "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                        "version": "3.1"
+                    }
+                },
+                "severity": "HIGH",
+                "status": "SUPPRESSED",
+                "title": "CVE-2023-44487 - nghttp2",
+                "type": "PACKAGE_VULNERABILITY",
+                "updatedAt": "2024-02-12T20:25:09.451Z"
+            },
+            {
+                "awsAccountId": "123456789123",
+                "description": "A vulnerability was found in SQLite SQLite3 up to 3.43.0 and classified as critical. This issue affects the function sessionReadRecord of the file ext/session/sqlite3session.c of the component make alltest Handler. The manipulation leads to heap-based buffer overflow. It is recommended to apply a patch to fix this issue. The associated identifier of this vulnerability is VDB-248999.",
+                "findingArn": "arn:aws:inspector2:us-east-2:123456789123:finding/51037784186579eb0e56a5f43fca7a42",
+                "firstObservedAt": "2024-02-12T20:25:09.451Z",
+                "lastObservedAt": "2024-02-12T20:25:09.451Z",
+                "packageVulnerabilityDetails": {
+                    "cvss": [
+                        {
+                            "baseScore": 7.3,
+                            "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+                            "source": "NVD",
+                            "version": "3.1"
+                        }
+                    ],
+                    "referenceUrls": [
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/D6C2HN4T2S6GYNTAUXLH45LQZHK7QPHP/",
+                        "https://sqlite.org/forum/forumpost/5bcbf4571c",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AYONA2XSNFMXLAW4IHLFI5UVV3QRNG5K/",
+                        "https://sqlite.org/src/info/0e4e7a05c4204b47"
+                    ],
+                    "relatedVulnerabilities": [],
+                    "source": "NVD",
+                    "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-7104",
+                    "vendorCreatedAt": "2023-12-29T10:15:13.000Z",
+                    "vendorSeverity": "HIGH",
+                    "vendorUpdatedAt": "2024-01-12T14:15:49.000Z",
+                    "vulnerabilityId": "CVE-2023-7104",
+                    "vulnerablePackages": [
+                        {
+                            "arch": "X86_64",
+                            "epoch": 0,
+                            "name": "sqlite",
+                            "packageManager": "OS",
+                            "release": "r2",
+                            "sourceLayerHash": "sha256:fce7cdb90ee7d254df76cd2583fcca7ba9a381da596247470ee84b5c5cf3a9b8",
+                            "version": "3.41.2"
+                        }
+                    ]
+                },
+                "remediation": {
+                    "recommendation": {
+                        "text": "None Provided"
+                    }
+                },
+                "resources": [
+                    {
+                        "details": {
+                            "awsEcrContainerImage": {
+                                "architecture": "amd64",
+                                "imageHash": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                                "imageTags": [
+                                    "latest"
+                                ],
+                                "platform": "ALPINE_LINUX_3_18",
+                                "pushedAt": "2024-02-12T20:24:55.000Z",
+                                "registry": "123456789123",
+                                "repositoryName": "repo_name"
+                            }
+                        },
+                        "id": "arn:aws:ecr:us-east-2:123456789123:repository/repo_name/sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                        "tags": {},
+                        "type": "AWS_ECR_CONTAINER_IMAGE"
+                    }
+                ],
+                "score": 7.3,
+                "scoreDetails": {
+                    "cvss": {
+                        "adjustments": [],
+                        "score": 7.3,
+                        "scoreSource": "NVD",
+                        "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+                        "version": "3.1"
+                    }
+                },
+                "severity": "HIGH",
+                "status": "ACTIVE",
+                "title": "CVE-2023-7104 - sqlite",
+                "type": "PACKAGE_VULNERABILITY",
+                "updatedAt": "2024-02-12T20:25:09.451Z"
+            },
+            {
+                "awsAccountId": "123456789123",
+                "description": "libexpat through 2.5.0 allows recursive XML Entity Expansion if XML_DTD is undefined at compile time.",
+                "findingArn": "arn:aws:inspector2:us-east-2:123456789123:finding/547d66ea96725be768f58a17f35549c5",
+                "firstObservedAt": "2024-02-12T20:25:09.451Z",
+                "lastObservedAt": "2024-02-12T20:25:09.451Z",
+                "packageVulnerabilityDetails": {
+                    "cvss": [
+                        {
+                            "baseScore": 5.5,
+                            "scoringVector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                            "source": "NVD",
+                            "version": "3.1"
+                        }
+                    ],
+                    "referenceUrls": [
+                        "https://cwe.mitre.org/data/definitions/776.html"
+                    ],
+                    "relatedVulnerabilities": [],
+                    "source": "NVD",
+                    "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-52426",
+                    "vendorCreatedAt": "2024-02-04T20:15:46.000Z",
+                    "vendorSeverity": "MEDIUM",
+                    "vendorUpdatedAt": "2024-02-09T02:02:39.000Z",
+                    "vulnerabilityId": "CVE-2023-52426",
+                    "vulnerablePackages": [
+                        {
+                            "arch": "X86_64",
+                            "epoch": 0,
+                            "name": "expat",
+                            "packageManager": "OS",
+                            "release": "r1",
+                            "sourceLayerHash": "sha256:3775a8f225dc321b6f316b7bb3bbff766258e7b7a6aacd4bb08954adce592679",
+                            "version": "2.5.0"
+                        }
+                    ]
+                },
+                "remediation": {
+                    "recommendation": {
+                        "text": "None Provided"
+                    }
+                },
+                "resources": [
+                    {
+                        "details": {
+                            "awsEcrContainerImage": {
+                                "architecture": "amd64",
+                                "imageHash": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                                "imageTags": [
+                                    "latest"
+                                ],
+                                "platform": "ALPINE_LINUX_3_18",
+                                "pushedAt": "2024-02-12T20:24:55.000Z",
+                                "registry": "123456789123",
+                                "repositoryName": "repo_name"
+                            }
+                        },
+                        "id": "arn:aws:ecr:us-east-2:123456789123:repository/repo_name/sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                        "tags": {},
+                        "type": "AWS_ECR_CONTAINER_IMAGE"
+                    }
+                ],
+                "score": 5.5,
+                "scoreDetails": {
+                    "cvss": {
+                        "adjustments": [],
+                        "score": 5.5,
+                        "scoreSource": "NVD",
+                        "scoringVector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+                        "version": "3.1"
+                    }
+                },
+                "severity": "MEDIUM",
+                "status": "ACTIVE",
+                "title": "CVE-2023-52426 - expat",
+                "type": "PACKAGE_VULNERABILITY",
+                "updatedAt": "2024-02-12T20:25:09.451Z"
+            },
+            {
+                "awsAccountId": "123456789123",
+                "description": "libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.",
+                "findingArn": "arn:aws:inspector2:us-east-2:123456789123:finding/a3f4c545f1be2a0c3a52d724d9627351",
+                "firstObservedAt": "2024-02-12T20:25:09.451Z",
+                "lastObservedAt": "2024-02-12T20:25:09.451Z",
+                "packageVulnerabilityDetails": {
+                    "cvss": [
+                        {
+                            "baseScore": 7.5,
+                            "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                            "source": "NVD",
+                            "version": "3.1"
+                        }
+                    ],
+                    "referenceUrls": [],
+                    "relatedVulnerabilities": [],
+                    "source": "NVD",
+                    "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-52425",
+                    "vendorCreatedAt": "2024-02-04T20:15:46.000Z",
+                    "vendorSeverity": "HIGH",
+                    "vendorUpdatedAt": "2024-02-09T02:03:16.000Z",
+                    "vulnerabilityId": "CVE-2023-52425",
+                    "vulnerablePackages": [
+                        {
+                            "arch": "X86_64",
+                            "epoch": 0,
+                            "name": "expat",
+                            "packageManager": "OS",
+                            "release": "r1",
+                            "sourceLayerHash": "sha256:3775a8f225dc321b6f316b7bb3bbff766258e7b7a6aacd4bb08954adce592679",
+                            "version": "2.5.0"
+                        }
+                    ]
+                },
+                "remediation": {
+                    "recommendation": {
+                        "text": "None Provided"
+                    }
+                },
+                "resources": [
+                    {
+                        "details": {
+                            "awsEcrContainerImage": {
+                                "architecture": "amd64",
+                                "imageHash": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                                "imageTags": [
+                                    "latest"
+                                ],
+                                "platform": "ALPINE_LINUX_3_18",
+                                "pushedAt": "2024-02-12T20:24:55.000Z",
+                                "registry": "123456789123",
+                                "repositoryName": "repo_name"
+                            }
+                        },
+                        "id": "arn:aws:ecr:us-east-2:123456789123:repository/repo_name/sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                        "tags": {},
+                        "type": "AWS_ECR_CONTAINER_IMAGE"
+                    }
+                ],
+                "score": 7.5,
+                "scoreDetails": {
+                    "cvss": {
+                        "adjustments": [],
+                        "score": 7.5,
+                        "scoreSource": "NVD",
+                        "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                        "version": "3.1"
+                    }
+                },
+                "severity": "HIGH",
+                "status": "ACTIVE",
+                "title": "CVE-2023-52425 - expat",
+                "type": "PACKAGE_VULNERABILITY",
+                "updatedAt": "2024-02-12T20:25:09.451Z"
+            },
+            {
+                "awsAccountId": "123456789123",
+                "description": "Vulnerability in the MySQL Server product of Oracle MySQL (component: InnoDB).  Supported versions that are affected are 5.7.43 and prior, 8.0.34 and prior and  8.1.0. Easily exploitable vulnerability allows high privileged attacker with network access via multiple protocols to compromise MySQL Server.  Successful attacks of this vulnerability can result in unauthorized ability to cause a hang or frequently repeatable crash (complete DOS) of MySQL Server. CVSS 3.1 Base Score 4.9 (Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H).",
+                "findingArn": "arn:aws:inspector2:us-east-2:123456789123:finding/c98d6c651ca340661fe0215270ca1c81",
+                "firstObservedAt": "2024-02-12T20:25:09.451Z",
+                "lastObservedAt": "2024-02-12T20:25:09.451Z",
+                "packageVulnerabilityDetails": {
+                    "cvss": [
+                        {
+                            "baseScore": 4.9,
+                            "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+                            "source": "NVD",
+                            "version": "3.1"
+                        }
+                    ],
+                    "referenceUrls": [
+                        "https://www.oracle.com/security-alerts/cpuoct2023.html",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/UCGSAQFWYIJRIYLZLHPS3MRUS4AQ5JQH/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/OR7GNQAJZ7NMHT4HRDNROR3DS272KKET/",
+                        "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YZL2AT2ZUKB6K22UTISHEZ4JKG4VZ3VO/",
+                        "https://lists.debian.org/debian-lts-announce/2024/01/msg00017.html"
+                    ],
+                    "relatedVulnerabilities": [],
+                    "source": "NVD",
+                    "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-22084",
+                    "vendorCreatedAt": "2023-10-17T22:15:13.000Z",
+                    "vendorSeverity": "MEDIUM",
+                    "vendorUpdatedAt": "2024-01-27T09:15:07.000Z",
+                    "vulnerabilityId": "CVE-2023-22084",
+                    "vulnerablePackages": [
+                        {
+                            "arch": "X86_64",
+                            "epoch": 0,
+                            "name": "mariadb",
+                            "packageManager": "OS",
+                            "release": "r0",
+                            "sourceLayerHash": "sha256:3775a8f225dc321b6f316b7bb3bbff766258e7b7a6aacd4bb08954adce592679",
+                            "version": "10.11.5"
+                        }
+                    ]
+                },
+                "remediation": {
+                    "recommendation": {
+                        "text": "None Provided"
+                    }
+                },
+                "resources": [
+                    {
+                        "details": {
+                            "awsEcrContainerImage": {
+                                "architecture": "amd64",
+                                "imageHash": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                                "imageTags": [
+                                    "latest"
+                                ],
+                                "platform": "ALPINE_LINUX_3_18",
+                                "pushedAt": "2024-02-12T20:24:55.000Z",
+                                "registry": "123456789123",
+                                "repositoryName": "repo_name"
+                            }
+                        },
+                        "id": "arn:aws:ecr:us-east-2:123456789123:repository/repo_name/sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                        "tags": {},
+                        "type": "AWS_ECR_CONTAINER_IMAGE"
+                    }
+                ],
+                "score": 4.9,
+                "scoreDetails": {
+                    "cvss": {
+                        "adjustments": [],
+                        "score": 4.9,
+                        "scoreSource": "NVD",
+                        "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
+                        "version": "3.1"
+                    }
+                },
+                "severity": "MEDIUM",
+                "status": "ACTIVE",
+                "title": "CVE-2023-22084 - mariadb",
+                "type": "PACKAGE_VULNERABILITY",
+                "updatedAt": "2024-02-12T20:25:09.451Z"
+            },
+            {
+                "awsAccountId": "123456789123",
+                "description": "Symfony is a PHP framework for web and console applications and a set of reusable PHP components. Starting in versions 2.0.0, 5.0.0, and 6.0.0 and prior to versions 4.4.51, 5.4.31, and 6.3.8, some Twig filters in CodeExtension use `is_safe=html` but don't actually ensure their input is safe. As of versions 4.4.51, 5.4.31, and 6.3.8, Symfony now escapes the output of the affected filters.",
+                "findingArn": "arn:aws:inspector2:us-east-2:123456789123:finding/dc4f3cb5086eb47b4c0e34ade43e04d9",
+                "firstObservedAt": "2024-02-12T20:25:09.451Z",
+                "lastObservedAt": "2024-02-12T20:25:09.451Z",
+                "packageVulnerabilityDetails": {
+                    "cvss": [
+                        {
+                            "baseScore": 6.1,
+                            "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                            "source": "NVD",
+                            "version": "3.1"
+                        }
+                    ],
+                    "referenceUrls": [
+                        "https://lists.debian.org/debian-lts-announce/2023/11/msg00019.html"
+                    ],
+                    "relatedVulnerabilities": [],
+                    "source": "NVD",
+                    "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-46734",
+                    "vendorCreatedAt": "2023-11-10T18:15:09.000Z",
+                    "vendorSeverity": "MEDIUM",
+                    "vendorUpdatedAt": "2023-11-24T20:15:07.000Z",
+                    "vulnerabilityId": "CVE-2023-46734",
+                    "vulnerablePackages": [
+                        {
+                            "epoch": 0,
+                            "filePath": "app/composer.lock",
+                            "name": "symfony/twig-bridge",
+                            "packageManager": "COMPOSER",
+                            "sourceLayerHash": "sha256:6dbc5f371e7521b80dba0880ec431a67a8def30d2d148f5c8a73cf35c87bd51e",
+                            "version": "v5.2.12"
+                        }
+                    ]
+                },
+                "remediation": {
+                    "recommendation": {
+                        "text": "None Provided"
+                    }
+                },
+                "resources": [
+                    {
+                        "details": {
+                            "awsEcrContainerImage": {
+                                "architecture": "amd64",
+                                "imageHash": "sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                                "imageTags": [
+                                    "latest"
+                                ],
+                                "platform": "ALPINE_LINUX_3_18",
+                                "pushedAt": "2024-02-12T20:24:55.000Z",
+                                "registry": "123456789123",
+                                "repositoryName": "repo_name"
+                            }
+                        },
+                        "id": "arn:aws:ecr:us-east-2:123456789123:repository/repo_name/sha256:06ff9868e9993b83de9d5989239ca22e38160f2f4c672c00a278f28ddfbc37c4",
+                        "tags": {},
+                        "type": "AWS_ECR_CONTAINER_IMAGE"
+                    }
+                ],
+                "score": 6.1,
+                "scoreDetails": {
+                    "cvss": {
+                        "adjustments": [],
+                        "score": 6.1,
+                        "scoreSource": "NVD",
+                        "scoringVector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+                        "version": "3.1"
+                    }
+                },
+                "severity": "MEDIUM",
+                "status": "ACTIVE",
+                "title": "CVE-2023-46734 - symfony/twig-bridge",
+                "type": "PACKAGE_VULNERABILITY",
+                "updatedAt": "2024-02-12T20:25:09.451Z"
+            }
+        ]
+    }
+}

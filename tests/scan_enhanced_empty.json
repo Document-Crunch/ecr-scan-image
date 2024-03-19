@@ -1,0 +1,15 @@
+{
+    "imageScanFindings": {
+        "findings": []
+    },
+    "registryId": "123456789123",
+    "repositoryName": "repo_name",
+    "imageId": {
+        "imageDigest": "sha256:33321b9c9233c16312a7d9aab57f39eeaad3955a0f5067a268515d7fbabdc3f8",
+        "imageTag": "latest"
+    },
+    "imageScanStatus": {
+        "status": "ACTIVE",
+        "description": "Continuous scan is selected for image."
+    }
+}
