@@ -240,8 +240,8 @@ const main = async () => {
     const missedIgnores = ignoreList.filter(vulnerabilityId => !ignoredFindings.map(({ packageVulnerabilityDetails }) => packageVulnerabilityDetails.vulnerabilityId).includes(vulnerabilityId));
     console.log('The following CVEs were not found in the result set:');
     missedIgnores.forEach(miss => console.log(`  ${miss}`));
-    throw new Error(`Ignore list contains CVE IDs that were not returned in the findings result set. They may be invalid or no longer be current vulnerabilities.`);
-  }
+    console.log('::warning::Ignore list contains CVE IDs that were not returned in the findings result set. They may be invalid or no longer be current vulnerabilities.');
+}
 
   // Remove SUPPRESSED findings from the list of findings
   // its under status here: findings.imageScanFindings.enhancedFindings.[].status
