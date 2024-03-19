@@ -248,14 +248,26 @@ const main = async () => {
   const suppressedList = findings.imageScanFindings.enhancedFindings.filter(finding => finding.status === 'SUPPRESSED');
   const findingsList = findings.imageScanFindings.enhancedFindings.filter(finding => finding.status !== 'SUPPRESSED');
 
-  findings.imageScanFindings.findingSeverityCounts = {
-    CRITICAL: findings.imageScanFindings.findingSeverityCounts.CRITICAL - suppressedList.filter(finding => finding.severity === 'CRITICAL').length,
-    HIGH: findings.imageScanFindings.findingSeverityCounts.HIGH - suppressedList.filter(finding => finding.severity === 'HIGH').length,
-    MEDIUM: findings.imageScanFindings.findingSeverityCounts.MEDIUM - suppressedList.filter(finding => finding.severity === 'MEDIUM').length,
-    LOW: findings.imageScanFindings.findingSeverityCounts.LOW - suppressedList.filter(finding => finding.severity === 'LOW').length,
-    INFORMATIONAL: findings.imageScanFindings.findingSeverityCounts.INFORMATIONAL - suppressedList.filter(finding => finding.severity === 'INFORMATIONAL').length,
-    UNDEFINED: findings.imageScanFindings.findingSeverityCounts.UNDEFINED - suppressedList.filter(finding => finding.severity === 'UNDEFINED').length
+  // if the findings object doesn't have a findingSeverityCounts object, create it
+  if(findings.imageScanFindings.findingSeverityCounts === undefined) {
+    findings.imageScanFindings.findingSeverityCounts = {
+      CRITICAL: 0,
+      HIGH: 0,
+      MEDIUM: 0,
+      LOW: 0,
+      INFORMATIONAL: 0,
+      UNDEFINED: 0
+    }
   }
+
+  findings.imageScanFindings.findingSeverityCounts = {
+    CRITICAL: (findings.imageScanFindings.findingSeverityCounts.CRITICAL || 0) - suppressedList.filter(finding => finding.severity === 'CRITICAL').length,
+    HIGH: (findings.imageScanFindings.findingSeverityCounts.HIGH || 0) - suppressedList.filter(finding => finding.severity === 'HIGH').length,
+    MEDIUM: (findings.imageScanFindings.findingSeverityCounts.MEDIUM || 0) - suppressedList.filter(finding => finding.severity === 'MEDIUM').length,
+    LOW: (findings.imageScanFindings.findingSeverityCounts.LOW || 0) - suppressedList.filter(finding => finding.severity === 'LOW').length,
+    INFORMATIONAL: (findings.imageScanFindings.findingSeverityCounts.INFORMATIONAL || 0) - suppressedList.filter(finding => finding.severity === 'INFORMATIONAL').length,
+    UNDEFINED: (findings.imageScanFindings.findingSeverityCounts.UNDEFINED || 0) - suppressedList.filter(finding => finding.severity === 'UNDEFINED').length
+}
 
   const ignoredCounts = countIgnoredFindings(ignoredFindings)
   const findingsDetails = findingsList || []
